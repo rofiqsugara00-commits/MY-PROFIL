@@ -53,28 +53,29 @@
 
         <!-- Area Visual (Hidden on mobile) -->
 <!-- Grid Visual (Ganti bagian div container stiker kamu dengan ini) -->
-<div class="hidden md:grid grid-cols-4 gap-6 items-center justify-items-center p-12 max-w-4xl mx-auto">
-    <!-- Baris 1 -->
-    <div class="stiker bg-yellow-400 text-black p-4 rotate-[-6deg]">VMWARE</div>
-    <div class="col-span-2"></div> <!-- Spacer -->
-    <div class="stiker bg-cyan-400 text-black p-4 rotate-[4deg]">PROMPT ENG</div>
+<!-- Grid Visual (Dibuat responsif agar tidak kepotong di HP) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 items-center justify-items-center p-4 md:p-12 max-w-4xl mx-auto">
+    <!-- Baris 1 (Stiker dibuat lebih kecil di HP) -->
+    <div class="stiker bg-yellow-400 text-black p-2 md:p-4 rotate-[-6deg] text-[10px] md:text-sm">VMWARE</div>
+    <div class="hidden md:block col-span-2"></div> <!-- Spacer hanya di desktop -->
+    <div class="stiker bg-cyan-400 text-black p-2 md:p-4 rotate-[4deg] text-[10px] md:text-sm">PROMPT ENG</div>
 
     <!-- Baris 2 (Foto di Tengah) -->
-    <div class="stiker bg-pink-400 text-black p-4 rotate-[-2deg]">FIREWALL</div>
-    <div class="row-start-2 col-start-2 col-span-2 flex justify-center">
-        <div class="w-64 h-80 border-4 border-white rotate-[-2deg] bg-neutral-800 shadow-[15px_15px_0px_rgba(255,255,255,0.1)]">
+    <div class="stiker bg-pink-400 text-black p-2 md:p-4 rotate-[-2deg] text-[10px] md:text-sm">FIREWALL</div>
+    <div class="col-span-2 flex justify-center py-2">
+        <!-- Ukuran foto mengecil di HP, membesar di desktop -->
+        <div class="w-40 h-52 md:w-64 md:h-80 border-4 border-white rotate-[-2deg] bg-neutral-800 shadow-[10px_10px_0px_rgba(255,255,255,0.1)]">
             <img src="profil.jpeg" alt="Rofiq Sugara" class="w-full h-full object-cover">
         </div>
     </div>
-    <div class="stiker bg-emerald-400 text-black p-4 rotate-[3deg]">ACTIVE DIR</div>
+    <div class="stiker bg-emerald-400 text-black p-2 md:p-4 rotate-[3deg] text-[10px] md:text-sm">ACTIVE DIR</div>
 
     <!-- Baris 3 -->
-    <div class="stiker bg-orange-400 text-black p-4 rotate-[5deg]">NAS STORAGE</div>
-    <div class="stiker bg-blue-500 text-white p-4 rotate-[2deg]">MS 365 ADMIN</div>
-    <div class="stiker bg-red-400 text-black p-4 rotate-[1deg]">FILESHARE</div>
-    <div class="stiker bg-purple-400 text-black p-4 rotate-[-4deg]">UNIFI</div>
+    <div class="stiker bg-orange-400 text-black p-2 md:p-4 rotate-[5deg] text-[10px] md:text-sm">NAS STORAGE</div>
+    <div class="stiker bg-blue-500 text-white p-2 md:p-4 rotate-[2deg] text-[10px] md:text-sm">MS 365 ADMIN</div>
+    <div class="stiker bg-red-400 text-black p-4 rotate-[1deg] text-[10px] md:text-sm">FILESHARE</div>
+    <div class="stiker bg-purple-400 text-black p-4 rotate-[-4deg] text-[10px] md:text-sm">UNIFI</div>
 </div>
-
         <section id="work" class="mt-32 pt-12">
             <h2 class="font-main text-6xl mb-16 uppercase italic text-white">Experience Highlights</h2>
             <div class="grid md:grid-cols-2 gap-8">
