@@ -10,9 +10,21 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap');
 
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .font-main {
             font-family: 'Archivo Black', sans-serif;
         }
+
+        /* ===================================== */
+        /* STICKER */
+        /* ===================================== */
 
         .stiker {
             border: 3px solid #000;
@@ -28,21 +40,30 @@
             z-index: 50;
         }
 
+        /* ===================================== */
+        /* GLITCH */
+        /* ===================================== */
+
         .glitch:hover {
             color: #facc15;
         }
 
         /* ===================================== */
-        /* AUTOMATION - MENGIKUTI STYLE ASLI */
+        /* AUTOMATION */
         /* ===================================== */
 
-        .automation-image {
-            border: 4px solid #000;
-            box-shadow: 8px 8px 0px #000;
+        .automation-section {
+            margin-top: 180px;
+        }
+
+        .automation-header {
+            margin-bottom: 70px;
         }
 
         .automation-flow {
             border: 4px solid #000;
+            margin-bottom: 70px;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
 
@@ -51,9 +72,75 @@
             box-shadow: 8px 8px 0px #000;
         }
 
+        .automation-image-wrapper {
+            background: #171717;
+            padding: 16px;
+        }
+
+        .automation-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0px #000;
+        }
+
+        .automation-content {
+            padding: 40px;
+        }
+
         .automation-label {
             border: 3px solid #000;
             font-family: 'Archivo Black', sans-serif;
+        }
+
+        .automation-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-content: flex-start;
+        }
+
+        .automation-tech span {
+            padding: 8px 12px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .automation-pipeline {
+            border-top: 2px solid #000;
+            margin-top: 32px;
+            padding-top: 24px;
+        }
+
+        .pipeline-items {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        /* ===================================== */
+        /* RESPONSIVE */
+        /* ===================================== */
+
+        @media (max-width: 768px) {
+
+            .automation-content {
+                padding: 24px;
+            }
+
+            .automation-header h2 {
+                font-size: 3rem;
+            }
+
+            .pipeline-items {
+                gap: 8px;
+                font-size: 12px;
+            }
+
         }
     </style>
 </head>
@@ -61,534 +148,495 @@
 
 <body class="bg-neutral-900 text-white selection:bg-yellow-400 selection:text-black">
 
-    <main class="max-w-6xl mx-auto px-6 md:px-12 py-12">
+<main class="max-w-6xl mx-auto px-6 md:px-12 py-12">
 
 
-        <!-- ===================================== -->
-        <!-- NAVIGATION - ORIGINAL -->
-        <!-- ===================================== -->
+    <!-- ====================================================== -->
+    <!-- NAVIGATION -->
+    <!-- ====================================================== -->
 
-        <nav class="flex justify-between items-center mb-32 font-bold uppercase tracking-widest text-sm text-neutral-400">
+    <nav class="flex justify-between items-center mb-32 font-bold uppercase tracking-widest text-sm text-neutral-400">
 
-            <div class="border-2 border-white px-3 py-1">
-                MY PROFIL
-            </div>
+        <div class="border-2 border-white px-3 py-1">
+            MY PROFIL
+        </div>
 
-            <div class="flex gap-8">
+        <div class="flex gap-8">
 
-                <a href="#work" class="hover:text-white transition">
-                    Work
-                </a>
+            <a href="#work" class="hover:text-white transition">
+                Work
+            </a>
 
-                <a href="#about" class="hover:text-white transition">
-                    About
-                </a>
+            <a href="#about" class="hover:text-white transition">
+                About
+            </a>
 
-                <a href="#automation" class="hover:text-white transition">
-                    Automation
-                </a>
+            <a href="#automation" class="hover:text-white transition">
+                Automation
+            </a>
 
-                <a href="#contact" class="hover:text-white transition">
-                    Contact
-                </a>
+            <a href="#contact" class="hover:text-white transition">
+                Contact
+            </a>
 
-            </div>
+        </div>
 
-        </nav>
-
-
-
-        <!-- ===================================== -->
-        <!-- HERO - ORIGINAL -->
-        <!-- ===================================== -->
-
-        <header class="mb-32 relative">
-
-            <h1 class="font-main text-[12vw] leading-[0.8] uppercase tracking-tighter text-white glitch transition-all">
-
-                IT INFRA<br>
-                STRUCTURE
-
-            </h1>
+    </nav>
 
 
-            <p class="mt-12 text-2xl text-neutral-300 font-medium max-w-2xl leading-tight">
+    <!-- ====================================================== -->
+    <!-- HERO -->
+    <!-- ====================================================== -->
 
-                Bridging the gap between
+    <header class="mb-32 relative">
 
-                <span class="text-white border-b-4 border-yellow-400">
-                    robust stability
-                </span>
+        <h1 class="font-main text-[12vw] leading-[0.8] uppercase tracking-tighter text-white glitch transition-all">
 
-                and
+            IT INFRA<br>
+            STRUCTURE
 
-                <span class="text-white border-b-4 border-cyan-400">
-                    innovative automation
-                </span>.
+        </h1>
+
+        <p class="mt-12 text-2xl text-neutral-300 font-medium max-w-2xl leading-tight">
+
+            Bridging the gap between
+
+            <span class="text-white border-b-4 border-yellow-400">
+                robust stability
+            </span>
+
+            and
+
+            <span class="text-white border-b-4 border-cyan-400">
+                innovative automation
+            </span>.
+
+        </p>
+
+    </header>
+
+
+    <!-- ====================================================== -->
+    <!-- ABOUT -->
+    <!-- ====================================================== -->
+
+    <section id="about" class="mb-32 max-w-4xl">
+
+        <h2 class="font-main text-6xl uppercase mb-12 italic text-neutral-600">
+            I am Rofiq.
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+
+            <p class="text-xl leading-relaxed">
+
+                I thrive on solving complex technical problems that keep business
+                operations running at peak performance.
+
+                <strong>
+                    "If it's manual, automate it. If it's broken, engineer a permanent fix."
+                </strong>
 
             </p>
 
-        </header>
+            <div class="bg-neutral-800 p-6 border-l-4 border-yellow-400">
+
+                <h3 class="font-main text-xl uppercase mb-4">
+                    The IT Hybrid
+                </h3>
+
+                <ul class="font-bold uppercase space-y-2 text-sm text-neutral-300">
+
+                    <li>
+                        • Infrastructure & Networking
+                    </li>
+
+                    <li>
+                        • Full-Stack Web Development
+                    </li>
+
+                    <li>
+                        • System Automation & Security
+                    </li>
+
+                    <li>
+                        • CCTV Surveillance Management
+                    </li>
+
+                    <li>
+                        • Microsoft 365 Admin
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
+    <!-- ====================================================== -->
+    <!-- VISUAL / STICKERS -->
+    <!-- ====================================================== -->
 
-        <!-- ===================================== -->
-        <!-- ABOUT - ORIGINAL -->
-        <!-- ===================================== -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 items-center justify-items-center p-4 md:p-12 max-w-4xl mx-auto">
 
-        <section id="about" class="mb-32 max-w-4xl">
+        <!-- ROW 1 -->
 
-            <h2 class="font-main text-6xl uppercase mb-12 italic text-neutral-600">
-                I am Rofiq.
+        <div class="stiker bg-yellow-400 text-black p-2 md:p-4 rotate-[-6deg] text-[10px] md:text-sm">
+            VMWARE
+        </div>
+
+        <div class="hidden md:block col-span-2"></div>
+
+        <div class="stiker bg-cyan-400 text-black p-2 md:p-4 rotate-[4deg] text-[10px] md:text-sm">
+            PROMPT ENG
+        </div>
+
+
+        <!-- ROW 2 -->
+
+        <div class="stiker bg-pink-400 text-black p-2 md:p-4 rotate-[-2deg] text-[10px] md:text-sm">
+            FIREWALL
+        </div>
+
+        <div class="col-span-2 flex justify-center py-2">
+
+            <div class="w-40 h-52 md:w-64 md:h-80 border-4 border-white rotate-[-2deg] bg-neutral-800 shadow-[10px_10px_0px_rgba(255,255,255,0.1)]">
+
+                <img
+                    src="profil.jpeg"
+                    alt="Rofiq Sugara"
+                    class="w-full h-full object-cover"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="stiker bg-emerald-400 text-black p-2 md:p-4 rotate-[3deg] text-[10px] md:text-sm">
+            ACTIVE DIR
+        </div>
+
+
+        <!-- ROW 3 -->
+
+        <div class="stiker bg-orange-400 text-black p-2 md:p-4 rotate-[5deg] text-[10px] md:text-sm">
+            NAS STORAGE
+        </div>
+
+        <div class="stiker bg-blue-500 text-white p-2 md:p-4 rotate-[2deg] text-[10px] md:text-sm">
+            MS 365 ADMIN
+        </div>
+
+        <div class="stiker bg-red-400 text-black p-4 rotate-[1deg] text-[10px] md:text-sm">
+            FILESHARE
+        </div>
+
+        <div class="stiker bg-purple-400 text-black p-4 rotate-[-4deg] text-[10px] md:text-sm">
+            UNIFI
+        </div>
+
+    </div>
+
+
+    <!-- ====================================================== -->
+    <!-- AUTOMATION SECTION -->
+    <!-- ====================================================== -->
+
+    <section id="automation" class="automation-section pt-12">
+
+
+        <!-- ================================================== -->
+        <!-- AUTOMATION HEADER -->
+        <!-- ================================================== -->
+
+        <div class="automation-header">
+
+            <p class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-4">
+                AUTOMATION / 001
+            </p>
+
+            <h2 class="font-main text-6xl uppercase italic text-neutral-600">
+                Recruitment Automation
             </h2>
 
+            <p class="mt-8 text-xl text-neutral-300 max-w-3xl leading-relaxed">
 
-            <div class="grid md:grid-cols-2 gap-12">
+                An automated recruitment pipeline built with
+                <strong class="text-yellow-400">n8n</strong>,
+                AI and Google Workspace to process candidates from
+                CV screening to interview invitation.
 
-                <p class="text-xl leading-relaxed">
+            </p>
 
-                    I thrive on solving complex technical problems that keep business operations running at peak performance.
-
-                    <strong>
-                        "If it's manual, automate it. If it's broken, engineer a permanent fix."
-                    </strong>
-
-                </p>
+        </div>
 
 
-                <div class="bg-neutral-800 p-6 border-l-4 border-yellow-400">
+        <!-- ================================================== -->
+        <!-- FLOW 01 -->
+        <!-- ================================================== -->
 
-                    <h3 class="font-main text-xl uppercase mb-4">
-                        The IT Hybrid
-                    </h3>
+        <div class="automation-flow bg-yellow-400 text-black">
+
+            <!-- IMAGE -->
+
+            <div class="automation-image-wrapper">
+
+                <img
+                    src="automation-recruitment-flow1.png"
+                    alt="Recruitment Automation Flow 01"
+                    class="automation-image"
+                >
+
+            </div>
 
 
-                    <ul class="font-bold uppercase space-y-2 text-sm text-neutral-300">
+            <!-- CONTENT -->
 
-                        <li>
-                            • Infrastructure & Networking
-                        </li>
+            <div class="automation-content">
 
-                        <li>
-                            • Full-Stack Web Development
-                        </li>
+                <div class="flex flex-col md:flex-row justify-between gap-10">
 
-                        <li>
-                            • System Automation & Security
-                        </li>
 
-                        <li>
-                            • CCTV Surveillance Management
-                        </li>
+                    <!-- DESCRIPTION -->
 
-                        <li>
-                            • Microsoft 365 Admin
-                        </li>
+                    <div class="max-w-2xl">
 
-                    </ul>
+                        <div class="flex items-center gap-4 mb-5">
+
+                            <span class="automation-label bg-black text-yellow-400 px-3 py-2 text-sm">
+                                FLOW 01
+                            </span>
+
+                            <span class="text-xs font-bold tracking-widest">
+                                CV PROCESSING
+                            </span>
+
+                        </div>
+
+                        <h3 class="font-main text-3xl md:text-4xl uppercase mb-5">
+
+                            CV Screening &
+                            <br>
+                            AI Analysis
+
+                        </h3>
+
+                        <p class="text-lg leading-relaxed">
+
+                            Incoming candidate CVs are processed automatically.
+                            The system extracts candidate information and uses
+                            AI to evaluate technical skills, experience,
+                            projects and overall suitability for the position.
+
+                        </p>
+
+                    </div>
+
+
+                    <!-- TECHNOLOGY -->
+
+                    <div class="automation-tech md:max-w-xs">
+
+                        <span class="bg-black text-yellow-400">
+                            WEBHOOK
+                        </span>
+
+                        <span class="bg-black text-yellow-400">
+                            N8N
+                        </span>
+
+                        <span class="bg-cyan-400 text-black">
+                            GEMINI
+                        </span>
+
+                        <span class="bg-white text-black">
+                            CV PARSING
+                        </span>
+
+                        <span class="bg-black text-yellow-400">
+                            TELEGRAM
+                        </span>
+
+                        <span class="bg-black text-yellow-400">
+                            GMAIL
+                        </span>
+
+                        <span class="bg-black text-yellow-400">
+                            GOOGLE DRIVE
+                        </span>
+
+                        <span class="bg-white text-black">
+                            GOOGLE SHEETS
+                        </span>
+
+                    </div>
 
                 </div>
 
-            </div>
 
-        </section>
+                <!-- PIPELINE -->
 
+                <div class="automation-pipeline">
 
+                    <p class="text-xs font-bold tracking-widest uppercase mb-4">
+                        Pipeline
+                    </p>
 
-        <!-- ===================================== -->
-        <!-- VISUAL / STICKERS - ORIGINAL -->
-        <!-- ===================================== -->
+                    <div class="pipeline-items">
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 items-center justify-items-center p-4 md:p-12 max-w-4xl mx-auto">
+                        <span>CV</span>
 
+                        <span>→</span>
 
-            <!-- Baris 1 -->
+                        <span>EXTRACT</span>
 
-            <div class="stiker bg-yellow-400 text-black p-2 md:p-4 rotate-[-6deg] text-[10px] md:text-sm">
-                VMWARE
-            </div>
+                        <span>→</span>
 
+                        <span>AI SCREENING</span>
 
-            <div class="hidden md:block col-span-2">
-            </div>
+                        <span>→</span>
 
+                        <span>SCORE</span>
 
-            <div class="stiker bg-cyan-400 text-black p-2 md:p-4 rotate-[4deg] text-[10px] md:text-sm">
-                PROMPT ENG
-            </div>
+                        <span>→</span>
 
+                        <span>CHECK ≥ 80</span>
 
+                        <span>→</span>
 
-            <!-- Baris 2 -->
+                        <span>ADD CANDIDATE</span>
 
-            <div class="stiker bg-pink-400 text-black p-2 md:p-4 rotate-[-2deg] text-[10px] md:text-sm">
-                FIREWALL
-            </div>
+                        <span>→</span>
 
+                        <span>NOTIFICATION</span>
 
-            <div class="col-span-2 flex justify-center py-2">
-
-                <div class="w-40 h-52 md:w-64 md:h-80 border-4 border-white rotate-[-2deg] bg-neutral-800 shadow-[10px_10px_0px_rgba(255,255,255,0.1)]">
-
-                    <img
-                        src="profil.jpeg"
-                        alt="Rofiq Sugara"
-                        class="w-full h-full object-cover"
-                    >
+                    </div>
 
                 </div>
 
-            </div>
-
-
-            <div class="stiker bg-emerald-400 text-black p-2 md:p-4 rotate-[3deg] text-[10px] md:text-sm">
-                ACTIVE DIR
-            </div>
-
-
-
-            <!-- Baris 3 -->
-
-            <div class="stiker bg-orange-400 text-black p-2 md:p-4 rotate-[5deg] text-[10px] md:text-sm">
-                NAS STORAGE
-            </div>
-
-
-            <div class="stiker bg-blue-500 text-white p-2 md:p-4 rotate-[2deg] text-[10px] md:text-sm">
-                MS 365 ADMIN
-            </div>
-
-
-            <div class="stiker bg-red-400 text-black p-4 rotate-[1deg] text-[10px] md:text-sm">
-                FILESHARE
-            </div>
-
-
-            <div class="stiker bg-purple-400 text-black p-4 rotate-[-4deg] text-[10px] md:text-sm">
-                UNIFI
             </div>
 
         </div>
 
 
+        <!-- ================================================== -->
+        <!-- FLOW 02 -->
+        <!-- ================================================== -->
 
-        <!-- ====================================================== -->
-        <!-- ====================================================== -->
-        <!-- AUTOMATION - TAMBAHAN SAJA -->
-        <!-- ====================================================== -->
-        <!-- ====================================================== -->
+        <div class="automation-flow bg-cyan-400 text-black">
 
-        <section id="automation" class="mt-32 pt-12">
+            <!-- IMAGE -->
 
+            <div class="automation-image-wrapper">
 
-            <!-- ===================================== -->
-            <!-- AUTOMATION HEADER -->
-            <!-- ===================================== -->
-
-            <div class="mb-16">
-
-                <p class="text-yellow-400 font-bold text-sm tracking-widest uppercase mb-4">
-                    AUTOMATION / 001
-                </p>
-
-
-                <h2 class="font-main text-6xl uppercase italic text-neutral-600">
-                    Recruitment Automation
-                </h2>
-
-
-                <p class="mt-8 text-xl text-neutral-300 max-w-3xl leading-relaxed">
-
-                    An automated recruitment pipeline built with
-                    <strong class="text-yellow-400">n8n</strong>,
-                    AI and Google Workspace to process candidates from
-                    CV screening to interview invitation.
-
-                </p>
+                <img
+                    src="automation-recruitment-flow2.png"
+                    alt="Recruitment Automation Flow 02"
+                    class="automation-image"
+                >
 
             </div>
 
 
+            <!-- CONTENT -->
 
-            <!-- ===================================== -->
-            <!-- FLOW 01 -->
-            <!-- ===================================== -->
+            <div class="automation-content">
 
-            <div class="automation-flow bg-yellow-400 text-black mb-16">
-
-                <!-- IMAGE -->
-
-                <div class="bg-neutral-900 p-3 md:p-5">
-
-                    <img
-                        src="automation-recruitment-flow1.png"
-                        alt="Recruitment Automation Flow 01"
-                        class="automation-image w-full h-auto"
-                    >
-
-                </div>
+                <div class="flex flex-col md:flex-row justify-between gap-10">
 
 
-                <!-- CONTENT -->
+                    <!-- DESCRIPTION -->
 
-                <div class="p-8 md:p-10">
+                    <div class="max-w-2xl">
 
+                        <div class="flex items-center gap-4 mb-5">
 
-                    <div class="flex flex-col md:flex-row justify-between gap-8">
-
-
-                        <div class="max-w-2xl">
-
-                            <div class="flex items-center gap-4 mb-5">
-
-                                <span class="automation-label bg-black text-yellow-400 px-3 py-2 text-sm">
-                                    FLOW 01
-                                </span>
-
-                                <span class="text-xs font-bold tracking-widest">
-                                    CV PROCESSING
-                                </span>
-
-                            </div>
-
-
-                            <h3 class="font-main text-3xl md:text-4xl uppercase mb-5">
-
-                                CV Screening &
-                                <br>
-                                AI Analysis
-
-                            </h3>
-
-
-                            <p class="text-lg leading-relaxed">
-
-                                Incoming candidate CVs are processed automatically.
-                                The system extracts candidate information and uses
-                                AI to evaluate technical skills, experience,
-                                projects and overall suitability for the position.
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex flex-wrap gap-2 md:max-w-xs content-start">
-
-                             <span class="bg-black text-yellow-400 px-3 py-2 text-xs font-bold">
-                                WEBHOOK
+                            <span class="automation-label bg-black text-cyan-400 px-3 py-2 text-sm">
+                                FLOW 02
                             </span>
 
-                            <span class="bg-black text-yellow-400 px-3 py-2 text-xs font-bold">
-                                N8N
-                            </span>
-
-                            <span class="bg-cyan-400 text-black px-3 py-2 text-xs font-bold">
-                                GEMINI
-                            </span>
-
-                            <span class="bg-white text-black px-3 py-2 text-xs font-bold">
-                                CV PARSING
-                            </span>
-
-                             <span class="bg-black text-yellow-400 px-3 py-2 text-xs font-bold">
-                                TELEGRAM
-                            </span>
-
-                             <span class="bg-black text-yellow-400 px-3 py-2 text-xs font-bold">
-                                GMAIL
-                            </span>
-
-                             <span class="bg-black text-yellow-400 px-3 py-2 text-xs font-bold">
-                                GOOGLE DRIVE
-                            </span>
-
-                            <span class="bg-white text-black px-3 py-2 text-xs font-bold">
-                                GOOGLE SHEETS
+                            <span class="text-xs font-bold tracking-widest">
+                                CANDIDATE REVIEW
                             </span>
 
                         </div>
 
-                    </div>
+                        <h3 class="font-main text-3xl md:text-4xl uppercase mb-5">
 
+                            Candidate Review &
+                            <br>
+                            Filtering
 
-                    <!-- PIPELINE -->
+                        </h3>
 
-                    <div class="border-t-2 border-black mt-8 pt-6">
+                        <p class="text-lg leading-relaxed">
 
-    <p class="text-xs font-bold tracking-widest uppercase mb-4">
-        Pipeline
-    </p>
+                            Candidates who pass the initial screening are
+                            processed through a second stage. The workflow
+                            performs deeper candidate review, applies filtering
+                            logic and prioritizes candidates for the next
+                            recruitment stage.
 
-    <div class="flex flex-wrap gap-3 items-center font-bold text-sm">
-
-        <span>CV</span>
-
-        <span>→</span>
-
-        <span>EXTRACT</span>
-
-        <span>→</span>
-
-        <span>AI SCREENING</span>
-
-        <span>→</span>
-
-        <span>SCORE</span>
-
-        <span>→</span>
-
-        <span>CHECK ≥ 80</span>
-
-        <span>→</span>
-
-        <span>ADD CANDIDATE</span>
-
-        <span>→</span>
-
-        <span>NOTIFICATION</span>
-
-    </div>
-
-</div>
-
-
-
-            <!-- ===================================== -->
-            <!-- FLOW 02 -->
-            <!-- ===================================== -->
-
-            <div class="automation-flow bg-cyan-400 text-black mb-16">
-
-                <!-- IMAGE -->
-
-                <div class="bg-neutral-900 p-3 md:p-5">
-
-                    <img
-                        src="automation-recruitment-flow2.png"
-                        alt="Recruitment Automation Flow 02"
-                        class="automation-image w-full h-auto"
-                    >
-
-                </div>
-
-
-                <!-- CONTENT -->
-
-                <div class="p-8 md:p-10">
-
-
-                    <div class="flex flex-col md:flex-row justify-between gap-8">
-
-
-                        <div class="max-w-2xl">
-
-                            <div class="flex items-center gap-4 mb-5">
-
-                                <span class="automation-label bg-black text-cyan-400 px-3 py-2 text-sm">
-                                    FLOW 02
-                                </span>
-
-                                <span class="text-xs font-bold tracking-widest">
-                                    CANDIDATE REVIEW
-                                </span>
-
-                            </div>
-
-
-                            <h3 class="font-main text-3xl md:text-4xl uppercase mb-5">
-
-                                Candidate Review &
-                                <br>
-                                Filtering
-
-                            </h3>
-
-
-                            <p class="text-lg leading-relaxed">
-
-                                Candidates who pass the initial screening are
-                                processed through a second stage. The workflow
-                                checks existing candidate data, applies filtering
-                                logic and prioritizes candidates for the next
-                                recruitment stage.
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex flex-wrap gap-2 md:max-w-xs content-start">
-
-                            <span class="bg-black text-cyan-400 px-3 py-2 text-xs font-bold">
-                                N8N
-                            </span>
-
-                            <span class="bg-emerald-400 text-black px-3 py-2 text-xs font-bold">
-                                AI AGENT
-                            </span>
-
-                            <span class="bg-white text-black px-3 py-2 text-xs font-bold">
-                                FILTER
-                            </span>
-
-                            <span class="bg-white text-black px-3 py-2 text-xs font-bold">
-                                GOOGLE SHEETS
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- PIPELINE -->
-
-                    <div class="border-t-2 border-black mt-8 pt-6">
-
-                        <p class="text-xs font-bold tracking-widest uppercase mb-4">
-                            Pipeline
                         </p>
 
+                    </div>
 
-                        <div class="flex flex-wrap gap-3 items-center font-bold text-sm">
 
-                            <span>
-                                SCREENED
-                            </span>
+                    <!-- TECHNOLOGY -->
 
-                            <span>
-                                →
-                            </span>
+                    <div class="automation-tech md:max-w-xs">
 
-                            <span>
-                                REVIEW
-                            </span>
+                        <span class="bg-black text-cyan-400">
+                            N8N
+                        </span>
 
-                            <span>
-                                →
-                            </span>
+                        <span class="bg-emerald-400 text-black">
+                            AI AGENT
+                        </span>
 
-                            <span>
-                                FILTER
-                            </span>
+                        <span class="bg-white text-black">
+                            FILTER
+                        </span>
 
-                            <span>
-                                →
-                            </span>
+                        <span class="bg-white text-black">
+                            GOOGLE SHEETS
+                        </span>
 
-                            <span>
-                                PRIORITIZE
-                            </span>
+                    </div>
 
-                            <span>
-                                →
-                            </span>
+                </div>
 
-                            <span>
-                                SHORTLIST
-                            </span>
 
-                        </div>
+                <!-- PIPELINE -->
+
+                <div class="automation-pipeline">
+
+                    <p class="text-xs font-bold tracking-widest uppercase mb-4">
+                        Pipeline
+                    </p>
+
+                    <div class="pipeline-items">
+
+                        <span>SCREENED</span>
+
+                        <span>→</span>
+
+                        <span>DEEP REVIEW</span>
+
+                        <span>→</span>
+
+                        <span>FILTER</span>
+
+                        <span>→</span>
+
+                        <span>SORT</span>
+
+                        <span>→</span>
+
+                        <span>TOP 20</span>
 
                     </div>
 
@@ -596,397 +644,378 @@
 
             </div>
 
+        </div>
 
 
-            <!-- ===================================== -->
-            <!-- FLOW 03 -->
-            <!-- ===================================== -->
+        <!-- ================================================== -->
+        <!-- FLOW 03 -->
+        <!-- ================================================== -->
 
-            <div class="automation-flow bg-pink-400 text-black mb-16">
+        <div class="automation-flow bg-pink-400 text-black">
 
-                <!-- IMAGE -->
+            <!-- IMAGE -->
 
-                <div class="bg-neutral-900 p-3 md:p-5">
+            <div class="automation-image-wrapper">
 
-                    <img
-                        src="automation-recruitment-flow3.png"
-                        alt="Recruitment Automation Flow 03"
-                        class="automation-image w-full h-auto"
-                    >
+                <img
+                    src="automation-recruitment-flow3.png"
+                    alt="Recruitment Automation Flow 03"
+                    class="automation-image"
+                >
 
-                </div>
-
-
-                <!-- CONTENT -->
-
-                <div class="p-8 md:p-10">
+            </div>
 
 
-                    <div class="flex flex-col md:flex-row justify-between gap-8">
+            <!-- CONTENT -->
+
+            <div class="automation-content">
+
+                <div class="flex flex-col md:flex-row justify-between gap-10">
 
 
-                        <div class="max-w-2xl">
+                    <!-- DESCRIPTION -->
 
-                            <div class="flex items-center gap-4 mb-5">
+                    <div class="max-w-2xl">
 
-                                <span class="automation-label bg-black text-pink-400 px-3 py-2 text-sm">
-                                    FLOW 03
-                                </span>
+                        <div class="flex items-center gap-4 mb-5">
 
-                                <span class="text-xs font-bold tracking-widest">
-                                    INTERVIEW
-                                </span>
-
-                            </div>
-
-
-                            <h3 class="font-main text-3xl md:text-4xl uppercase mb-5">
-
-                                Interview Invitation
-                                <br>
-                                Automation
-
-                            </h3>
-
-
-                            <p class="text-lg leading-relaxed">
-
-                                The final workflow handles shortlisted candidates
-                                and prepares interview invitations based on the
-                                interview data stored in Google Sheets.
-
-                                The system can process interview type, meeting
-                                link, interview date, time and location before
-                                sending the invitation.
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="flex flex-wrap gap-2 md:max-w-xs content-start">
-
-                            <span class="bg-black text-pink-400 px-3 py-2 text-xs font-bold">
-                                N8N
+                            <span class="automation-label bg-black text-pink-400 px-3 py-2 text-sm">
+                                FLOW 03
                             </span>
 
-                            <span class="bg-yellow-400 text-black px-3 py-2 text-xs font-bold">
-                                GMAIL
-                            </span>
-
-                            <span class="bg-cyan-400 text-black px-3 py-2 text-xs font-bold">
-                                GOOGLE SHEETS
-                            </span>
-
-                            <span class="bg-white text-black px-3 py-2 text-xs font-bold">
-                                AUTOMATED EMAIL
+                            <span class="text-xs font-bold tracking-widest">
+                                INTERVIEW
                             </span>
 
                         </div>
 
-                    </div>
+                        <h3 class="font-main text-3xl md:text-4xl uppercase mb-5">
 
+                            Interview Invitation
+                            <br>
+                            Automation
 
-                    <!-- PIPELINE -->
+                        </h3>
 
-                    <div class="border-t-2 border-black mt-8 pt-6">
+                        <p class="text-lg leading-relaxed">
 
-                        <p class="text-xs font-bold tracking-widest uppercase mb-4">
-                            Pipeline
+                            The final workflow handles shortlisted candidates
+                            and prepares interview invitations based on the
+                            interview data stored in Google Sheets.
+
+                            The system can process interview type, meeting
+                            link, interview date, time and location before
+                            sending the invitation.
+
                         </p>
 
+                    </div>
 
-                        <div class="flex flex-wrap gap-3 items-center font-bold text-sm">
 
-                            <span>
-                                SHORTLIST
-                            </span>
+                    <!-- TECHNOLOGY -->
 
-                            <span>
-                                →
-                            </span>
+                    <div class="automation-tech md:max-w-xs">
 
-                            <span>
-                                CHECK STATUS
-                            </span>
+                        <span class="bg-black text-pink-400">
+                            N8N
+                        </span>
 
-                            <span>
-                                →
-                            </span>
+                        <span class="bg-yellow-400 text-black">
+                            GMAIL
+                        </span>
 
-                            <span>
-                                INTERVIEW DATA
-                            </span>
+                        <span class="bg-cyan-400 text-black">
+                            GOOGLE SHEETS
+                        </span>
 
-                            <span>
-                                →
-                            </span>
-
-                            <span>
-                                GENERATE INVITATION
-                            </span>
-
-                            <span>
-                                →
-                            </span>
-
-                            <span>
-                                SEND EMAIL
-                            </span>
-
-                        </div>
+                        <span class="bg-white text-black">
+                            AUTOMATED EMAIL
+                        </span>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- PIPELINE -->
 
+                <div class="automation-pipeline">
 
-            <!-- ===================================== -->
-            <!-- AUTOMATION SUMMARY -->
-            <!-- ===================================== -->
-
-            <div class="grid md:grid-cols-3 gap-6 mb-10">
-
-
-                <div class="stiker bg-yellow-400 text-black p-6 rotate-[-2deg]">
-
-                    <div class="font-main text-4xl mb-2">
-                        01
-                    </div>
-
-                    <div class="font-bold uppercase text-sm">
-                        CV Screening
-                    </div>
-
-                    <p class="text-xs mt-3 font-bold uppercase">
-                        Extract & analyze candidate data
+                    <p class="text-xs font-bold tracking-widest uppercase mb-4">
+                        Pipeline
                     </p>
 
-                </div>
+                    <div class="pipeline-items">
 
+                        <span>SHORTLIST</span>
 
-                <div class="stiker bg-cyan-400 text-black p-6 rotate-[2deg]">
+                        <span>→</span>
 
-                    <div class="font-main text-4xl mb-2">
-                        02
+                        <span>CHECK STATUS</span>
+
+                        <span>→</span>
+
+                        <span>INTERVIEW DATA</span>
+
+                        <span>→</span>
+
+                        <span>GENERATE INVITATION</span>
+
+                        <span>→</span>
+
+                        <span>SEND EMAIL</span>
+
                     </div>
-
-                    <div class="font-bold uppercase text-sm">
-                        Candidate Review
-                    </div>
-
-                    <p class="text-xs mt-3 font-bold uppercase">
-                        Filter & prioritize candidates
-                    </p>
-
-                </div>
-
-
-                <div class="stiker bg-pink-400 text-black p-6 rotate-[-1deg]">
-
-                    <div class="font-main text-4xl mb-2">
-                        03
-                    </div>
-
-                    <div class="font-bold uppercase text-sm">
-                        Interview
-                    </div>
-
-                    <p class="text-xs mt-3 font-bold uppercase">
-                        Automate interview invitation
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ===================================== -->
-        <!-- EXPERIENCE - ORIGINAL -->
-        <!-- ===================================== -->
-
-        <section id="work" class="mt-32 pt-12">
-
-            <h2 class="font-main text-6xl mb-16 uppercase italic text-white">
-                Experience Highlights
-            </h2>
-
-
-            <div class="grid md:grid-cols-2 gap-8">
-
-
-                <div class="bg-yellow-400 text-black p-10 border-4 border-black hover:-translate-y-2 transition-all">
-
-                    <h3 class="font-main text-3xl uppercase mb-6">
-                        Digital Solutions
-                    </h3>
-
-
-                    <ul class="space-y-4 font-bold text-sm uppercase">
-
-                        <li>
-                            • Production Data Gathering System Installation
-                        </li>
-
-                        <li>
-                            • UI/UX & Frontend CMMS Development
-                        </li>
-
-                        <li>
-                            • Web-based IT Asset Management System (MERN)
-                        </li>
-
-                        <li>
-                            • Digital Document Management System (DMS) Implementation
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-
-                <div class="bg-cyan-400 text-black p-10 border-4 border-black hover:-translate-y-2 transition-all">
-
-                    <h3 class="font-main text-3xl uppercase mb-6">
-                        Infra & Operations
-                    </h3>
-
-
-                    <ul class="space-y-4 font-bold text-sm uppercase">
-
-                        <li>
-                            • CCTV Installation & Management
-                        </li>
-
-                        <li>
-                            • Microsoft Office License Migration
-                        </li>
-
-                        <li>
-                            • Infrastructure Maintenance & Support
-                        </li>
-
-                    </ul>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
 
+        <!-- ================================================== -->
+        <!-- AUTOMATION SUMMARY -->
+        <!-- ================================================== -->
 
-        <!-- ===================================== -->
-        <!-- CONTACT - ORIGINAL -->
-        <!-- ===================================== -->
-
-        <section id="contact" class="mt-32 border-t-2 border-white pt-20">
-
-            <h2 class="font-main text-5xl mb-6 uppercase">
-                Let's Connect
-            </h2>
+        <div class="grid md:grid-cols-3 gap-6 mb-20 mt-10">
 
 
-            <p class="text-neutral-400 mb-12 text-lg">
-                Got a project in mind? Let's build something loud.
-            </p>
+            <!-- 01 -->
 
+            <div class="stiker bg-yellow-400 text-black p-6 rotate-[-2deg]">
 
-            <div class="flex flex-col md:flex-row gap-12">
+                <div class="font-main text-4xl mb-2">
+                    01
+                </div>
 
+                <div class="font-bold uppercase text-sm">
+                    CV Screening
+                </div>
 
-                <!-- WHATSAPP -->
-
-                <a
-                    href="https://wa.me/628569092801"
-                    target="_blank"
-                    class="flex items-center gap-3 text-2xl font-bold border-b-4 border-yellow-400 hover:text-yellow-400 transition-all"
-                >
-
-                    <svg
-                        class="w-8 h-8"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.591 5.52 0 10.02-4.5 10.02-10.02s-4.5-10.02-10.02-10.02-10.02 4.5-10.02 10.02c-.001 2.03.593 3.89 1.678 5.487l-.92 3.355 3.45-.903z"/>
-
-                    </svg>
-
-                    <span>
-                        WHATSAPP
-                    </span>
-
-                </a>
-
-
-
-                <!-- LINKEDIN -->
-
-                <a
-                    href="https://www.linkedin.com/in/rofiq-sugara-65776a24b"
-                    target="_blank"
-                    class="flex items-center gap-3 text-2xl font-bold border-b-4 border-cyan-400 hover:text-cyan-400 transition-all"
-                >
-
-                    <svg
-                        class="w-8 h-8"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762-2.238 5-5 5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-
-                    </svg>
-
-                    <span>
-                        LINKEDIN
-                    </span>
-
-                </a>
-
-
-
-                <!-- INSTAGRAM -->
-
-                <a
-                    href="https://www.instagram.com/rofiqsugara_"
-                    target="_blank"
-                    class="flex items-center gap-3 text-2xl font-bold border-b-4 border-pink-400 hover:text-pink-400 transition-all"
-                >
-
-                    <svg
-                        class="w-8 h-8"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.227 1.664 4.771 4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-3.584-.07-4.849-.149-3.26-.149-4.771-1.699-4.919-4.92-.058-1.28-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618-6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-
-                    </svg>
-
-                    <span>
-                        INSTAGRAM
-                    </span>
-
-                </a>
-
+                <p class="text-xs mt-3 font-bold uppercase">
+                    Extract & analyze candidate data
+                </p>
 
             </div>
 
-        </section>
+
+            <!-- 02 -->
+
+            <div class="stiker bg-cyan-400 text-black p-6 rotate-[2deg]">
+
+                <div class="font-main text-4xl mb-2">
+                    02
+                </div>
+
+                <div class="font-bold uppercase text-sm">
+                    Candidate Review
+                </div>
+
+                <p class="text-xs mt-3 font-bold uppercase">
+                    Deep review, filter & prioritize candidates
+                </p>
+
+            </div>
 
 
-    </main>
+            <!-- 03 -->
+
+            <div class="stiker bg-pink-400 text-black p-6 rotate-[-1deg]">
+
+                <div class="font-main text-4xl mb-2">
+                    03
+                </div>
+
+                <div class="font-bold uppercase text-sm">
+                    Interview
+                </div>
+
+                <p class="text-xs mt-3 font-bold uppercase">
+                    Automate interview invitation
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- EXPERIENCE -->
+    <!-- ====================================================== -->
+
+    <section id="work" class="mt-32 pt-12">
+
+        <h2 class="font-main text-6xl mb-16 uppercase italic text-white">
+            Experience Highlights
+        </h2>
+
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+
+            <!-- DIGITAL -->
+
+            <div class="bg-yellow-400 text-black p-10 border-4 border-black hover:-translate-y-2 transition-all">
+
+                <h3 class="font-main text-3xl uppercase mb-6">
+                    Digital Solutions
+                </h3>
+
+                <ul class="space-y-4 font-bold text-sm uppercase">
+
+                    <li>
+                        • Production Data Gathering System Installation
+                    </li>
+
+                    <li>
+                        • UI/UX & Frontend CMMS Development
+                    </li>
+
+                    <li>
+                        • Web-based IT Asset Management System (MERN)
+                    </li>
+
+                    <li>
+                        • Digital Document Management System (DMS) Implementation
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- INFRA -->
+
+            <div class="bg-cyan-400 text-black p-10 border-4 border-black hover:-translate-y-2 transition-all">
+
+                <h3 class="font-main text-3xl uppercase mb-6">
+                    Infra & Operations
+                </h3>
+
+                <ul class="space-y-4 font-bold text-sm uppercase">
+
+                    <li>
+                        • CCTV Installation & Management
+                    </li>
+
+                    <li>
+                        • Microsoft Office License Migration
+                    </li>
+
+                    <li>
+                        • Infrastructure Maintenance & Support
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ====================================================== -->
+    <!-- CONTACT -->
+    <!-- ====================================================== -->
+
+    <section id="contact" class="mt-32 border-t-2 border-white pt-20">
+
+        <h2 class="font-main text-5xl mb-6 uppercase">
+            Let's Connect
+        </h2>
+
+        <p class="text-neutral-400 mb-12 text-lg">
+            Got a project in mind? Let's build something loud.
+        </p>
+
+
+        <div class="flex flex-col md:flex-row gap-12">
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="https://wa.me/628569092801"
+                target="_blank"
+                class="flex items-center gap-3 text-2xl font-bold border-b-4 border-yellow-400 hover:text-yellow-400 transition-all"
+            >
+
+                <svg
+                    class="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
+
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.591 5.52 0 10.02-4.5 10.02-10.02s-4.5-10.02-10.02-10.02-10.02 4.5-10.02 10.02c-.001 2.03.593 3.89 1.678 5.487l-.92 3.355 3.45-.903z"/>
+
+                </svg>
+
+                <span>
+                    WHATSAPP
+                </span>
+
+            </a>
+
+
+            <!-- LINKEDIN -->
+
+            <a
+                href="https://www.linkedin.com/in/rofiq-sugara-65776a24b"
+                target="_blank"
+                class="flex items-center gap-3 text-2xl font-bold border-b-4 border-cyan-400 hover:text-cyan-400 transition-all"
+            >
+
+                <svg
+                    class="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
+
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762-2.238 5-5 5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+
+                </svg>
+
+                <span>
+                    LINKEDIN
+                </span>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="https://www.instagram.com/rofiqsugara_"
+                target="_blank"
+                class="flex items-center gap-3 text-2xl font-bold border-b-4 border-pink-400 hover:text-pink-400 transition-all"
+            >
+
+                <svg
+                    class="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
+
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.227-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-3.584-.07-4.849-.149-3.26-.149-4.771-1.699-4.919-4.92-.058-1.28-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618-6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+
+                </svg>
+
+                <span>
+                    INSTAGRAM
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
 
 </body>
 </html>
